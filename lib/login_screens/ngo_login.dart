@@ -3,7 +3,6 @@ import 'package:together/app_colors.dart';
 import 'package:together/core/auth_methods.dart';
 import 'package:together/forget_password/forgetpassword_ngo.dart';
 import 'package:together/ngo_screens/ngo_main_screen.dart';
-// AIzaSyBhX6jmEaP0hJpGJTrXzYBJmSZrRrhT49w
 class NGOLogin extends StatefulWidget {
   const NGOLogin({Key? key}) : super(key: key);
 
