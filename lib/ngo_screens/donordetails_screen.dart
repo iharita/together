@@ -12,7 +12,6 @@ class DonorDetails extends StatelessWidget {
       child: Scaffold(
           appBar: AppBar(
             title: const Text('Donor Details'),
-            backgroundColor: primaryColor,
           ),
           body: SingleChildScrollView(
             child: Padding(
@@ -54,12 +53,12 @@ class DonorDetails extends StatelessWidget {
                       ),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 15,
                   ),
-                  TextField(
+                  const TextField(
                     decoration: InputDecoration(
-                      border: const OutlineInputBorder(),
+                      border: OutlineInputBorder(),
                       labelText: 'Enter Volunteer Name',
                     ),
                   ),
@@ -71,26 +70,26 @@ class DonorDetails extends StatelessWidget {
                     children: [
                       ElevatedButton(
                         onPressed: () {
-                          Navigator.push(context, MaterialPageRoute(builder: (context)=> const NGOMainScreen()));
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const NGOMainScreen()));
                         },
-                        child: Icon(Icons.close, size:30,color: Colors.white),
+                        child: const Icon(Icons.close, size:30,color: Colors.white),
                         style: ElevatedButton.styleFrom(
-                          shape: CircleBorder(),
-                          padding: EdgeInsets.all(20),
+                          shape: const CircleBorder(),
+                          padding: const EdgeInsets.all(20),
                           backgroundColor: Colors.red, // <-- Button color
                         ),
                       ),
-                      SizedBox(
+                      const SizedBox(
                         width: 16,
                       ),
                       ElevatedButton(
                         onPressed: () {
                           Navigator.push(context, MaterialPageRoute(builder: (context)=> const AcceptRequestScreen()));
                         },
-                        child: Icon(Icons.check,size: 30, color: Colors.white),
+                        child: const Icon(Icons.check,size: 30, color: Colors.white),
                         style: ElevatedButton.styleFrom(
-                          shape: CircleBorder(),
-                          padding: EdgeInsets.all(20),
+                          shape: const CircleBorder(),
+                          padding: const EdgeInsets.all(20),
                           backgroundColor: primaryColor, // <-- Button color
                         ),
                       ),

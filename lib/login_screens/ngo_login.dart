@@ -3,6 +3,10 @@ import 'package:together/app_colors.dart';
 import 'package:together/core/auth_methods.dart';
 import 'package:together/forget_password/forgetpassword_ngo.dart';
 import 'package:together/ngo_screens/ngo_main_screen.dart';
+import 'package:together/signup_screens/signup_options.dart';
+
+// AIzaSyBhX6jmEaP0hJpGJTrXzYBJmSZrRrhT49w
+
 class NGOLogin extends StatefulWidget {
   const NGOLogin({Key? key}) : super(key: key);
 
@@ -37,9 +41,9 @@ class _NGOLoginState extends State<NGOLogin> {
               const SizedBox(
                 height: 60,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Center(
                     child: Text("T",
                         style: TextStyle(
@@ -66,7 +70,7 @@ class _NGOLoginState extends State<NGOLogin> {
                 ),
               ),
               const SizedBox(
-                height: 60,
+                height: 50,
               ),
               const Center(
                 child: Text(
@@ -75,7 +79,7 @@ class _NGOLoginState extends State<NGOLogin> {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 30,
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -114,7 +118,7 @@ class _NGOLoginState extends State<NGOLogin> {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 30,
               ),
               MaterialButton(
                 minWidth: MediaQuery.of(context).size.width - 200,
@@ -132,6 +136,25 @@ class _NGOLoginState extends State<NGOLogin> {
                   "Login",
                   style: TextStyle(color: whiteColor, fontSize: 22),
                 ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("New user?",
+                      style: TextStyle(fontSize: 16.0, color: blackColor)
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> const SignupOptions()));
+                    },
+                    child: const Text(" REGISTER NOW",
+                        style: TextStyle(fontSize: 16.0, decoration: TextDecoration.underline, fontWeight: FontWeight.bold, color: blackColor)
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

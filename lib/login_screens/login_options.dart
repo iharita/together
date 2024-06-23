@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:together/app_colors.dart';
+import 'package:together/donor_screens/donor_homescreen.dart';
 import 'package:together/login_screens/donor_login.dart';
 import 'package:together/login_screens/ngo_login.dart';
+import 'package:together/ngo_screens/ngo_main_screen.dart';
 import 'package:together/signup_screens/signup_options.dart';
 
 class LoginOptions extends StatelessWidget {
@@ -44,7 +46,7 @@ class LoginOptions extends StatelessWidget {
               minWidth: MediaQuery.of(context).size.width-80,
               height: 60.0,
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> const DonorLogin()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const HomeScreenDonor()));
               },
               color: primaryColor,
               shape: RoundedRectangleBorder(
@@ -65,7 +67,7 @@ class LoginOptions extends StatelessWidget {
               minWidth: MediaQuery.of(context).size.width-80,
               height: 60.0,
               onPressed: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> const NGOLogin()));
+                Navigator.pushReplacement(context, MaterialPageRoute(builder: (context)=> const NGOMainScreen()));
               },
               color: primaryColor,
               shape: RoundedRectangleBorder(
@@ -81,10 +83,10 @@ class LoginOptions extends StatelessWidget {
             ),
             const Spacer(),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                const Text("New user?",
-                  style: TextStyle(fontSize: 16.0, color: blackColor)
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("New user?",
+                      style: TextStyle(fontSize: 16.0, color: blackColor)
                 ),
                 InkWell(
                   onTap: () {

@@ -97,7 +97,7 @@ class _FirstScreenState extends State<FirstScreen> {
                 minWidth: MediaQuery.of(context).size.width - 80,
                 height: 60.0,
                 onPressed: () {
-                  Navigator.push(
+                  Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) => const LoginOptions()));

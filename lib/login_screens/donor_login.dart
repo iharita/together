@@ -3,6 +3,7 @@ import 'package:together/app_colors.dart';
 import 'package:together/core/auth_methods.dart';
 import 'package:together/donor_screens/donor_homescreen.dart';
 import 'package:together/forget_password/forgetpassword_donor.dart';
+import 'package:together/signup_screens/signup_options.dart';
 
 class DonorLogin extends StatefulWidget {
   const DonorLogin({Key? key}) : super(key: key);
@@ -38,9 +39,9 @@ class _DonorLoginState extends State<DonorLogin> {
               const SizedBox(
                 height: 60,
               ),
-              Row(
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.center,
-                children: const [
+                children: [
                   Center(
                     child: Text("T",
                         style: TextStyle(
@@ -67,7 +68,7 @@ class _DonorLoginState extends State<DonorLogin> {
                 ),
               ),
               const SizedBox(
-                height: 60,
+                height: 50,
               ),
               const Center(
                 child: Text(
@@ -76,7 +77,7 @@ class _DonorLoginState extends State<DonorLogin> {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 30,
               ),
               Padding(
                 padding: const EdgeInsets.all(16.0),
@@ -115,7 +116,7 @@ class _DonorLoginState extends State<DonorLogin> {
                 ),
               ),
               const SizedBox(
-                height: 40,
+                height: 20,
               ),
               MaterialButton(
                 minWidth: MediaQuery.of(context).size.width - 200,
@@ -127,10 +128,29 @@ class _DonorLoginState extends State<DonorLogin> {
                 color: primaryColor,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(20)),
-                child: isLoading?CircularProgressIndicator(color: Colors.white,):const Text(
+                child: isLoading?const CircularProgressIndicator(color: Colors.white,):const Text(
                   "Login",
                   style: TextStyle(color: whiteColor, fontSize: 22),
                 ),
+              ),
+              const SizedBox(
+                height: 40,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text("New user?",
+                      style: TextStyle(fontSize: 16.0, color: blackColor)
+                  ),
+                  InkWell(
+                    onTap: () {
+                      Navigator.push(context, MaterialPageRoute(builder: (context)=> const SignupOptions()));
+                    },
+                    child: const Text(" REGISTER NOW",
+                        style: TextStyle(fontSize: 16.0, decoration: TextDecoration.underline, fontWeight: FontWeight.bold, color: blackColor)
+                    ),
+                  ),
+                ],
               ),
             ],
           ),
@@ -153,7 +173,7 @@ class _DonorLoginState extends State<DonorLogin> {
       password: passwordController.text,
     );
     if (result == 'success') {
-      Navigator.push(
+      Navigator.pushReplacement(
           context,
           MaterialPageRoute(
               builder: (context) => const HomeScreenDonor()));

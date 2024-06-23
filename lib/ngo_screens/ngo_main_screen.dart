@@ -75,19 +75,29 @@ class NGOHomeScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
      List<String> arrNames = [
-      'Radhika Kotak',
       'Harita Dave',
-      'Bhavin Roy',
       'Deep Dave',
+       'Harvi Patel',
       'Jeet Gajjar',
-      'Ghanshyam Kotak'
+      'Harsh Joshi',
+       'Prachi Patel',
+       'Meena Patil',
+       'Raval Pooja',
+       'Divya Chauhan',
+       'Khushi Shah',
+       'Honey Patel'
     ];
-    return Stack(
-      children:  [
-        RequestListWidget(arrNames),
-        if(arrNames.isEmpty)
-        const NoRequestWidget(),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Center(child: Text('Donor Requests')),
+      ),
+      body: Stack(
+        children:  [
+          RequestListWidget(arrNames),
+          if(arrNames.isEmpty)
+          const NoRequestWidget(),
+        ],
+      ),
     );
   }
 }
